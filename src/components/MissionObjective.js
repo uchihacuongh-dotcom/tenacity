@@ -1,7 +1,7 @@
 const MissionObjective = ({ missionNumber, objective, hint }) => {
   return (
     <div style={{ fontSize: '24px', textAlign: 'center' }}>
-      <strong>Mission {missionNumber} Objective</strong>
+      <strong>Mục tiêu nhiệm vụ {missionNumber}</strong>
       <br/>
       {objective}
       {

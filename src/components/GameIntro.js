@@ -58,7 +58,7 @@ const GameIntro = ({ onCompleteIntro, onStartPlaying }) => {
         className='subheadText'
         opacity={titleSpring.opacity}
       >
-        A game by Brian Yu
+        Trò chơi của Brian Yu (Việt hóa)
       </text>
 
       {/* Play button */}
@@ -81,7 +81,7 @@ const GameIntro = ({ onCompleteIntro, onStartPlaying }) => {
         className='hoverable'
         onClick={completeIntro}
       >
-        Play
+        Chơi
       </text>
 
     </a.g>

@@ -468,7 +468,7 @@ const Level = ({ planetIndex, missionIndex, onSuccess, onFailure, program, progr
         } else {
           setState(state => ({
             ...state,
-           loseMessage: 'Tenacity tried to press a button that wasn\'t there.'
+           loseMessage: 'Tenacity định bấm nút nhưng ở đó không có nút nào.'
           }));
         }
         break;
@@ -494,7 +494,7 @@ const Level = ({ planetIndex, missionIndex, onSuccess, onFailure, program, progr
         } else {
           setState(state => ({
             ...state,
-           loseMessage: 'Tenacity can only build bridges over craters.'
+           loseMessage: 'Tenacity chỉ có thể bắc cầu qua hố thiên thạch.'
           }));
         }
         break;
@@ -583,7 +583,7 @@ const itemSprings = useSprings(items.length, items.map((item, i) => ({
             ...item,
             elevation: item.elevation - 20
           } : item),
-          loseMessage: 'Tenacity fell into crater.'
+          loseMessage: 'Tenacity đã rơi xuống hố thiên thạch.'
         }));
         return;
       }
@@ -680,7 +680,7 @@ return (
         opacity={winSpring.opacity}
         style={{ fontSize: '80px', fill: planet.colors.text }}
       >
-        Mission Success
+        Hoàn thành nhiệm vụ
       </a.text>
       <a.text
         x='50%'
@@ -690,7 +690,7 @@ return (
         opacity={loseSpring.opacity}
         style={{ fontSize: '80px', fill: planet.colors.text }}
       >
-        Try Again
+        Thử lại nhé
       </a.text>
       <a.text
         x='50%'

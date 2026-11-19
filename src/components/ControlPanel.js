@@ -69,8 +69,8 @@ const ControlPanel = ({ addToProgram, blocks, onResetProgram, onSubmitProgram,
           </div>
           {!programSubmitted &&
           <div>
-            <button onClick={onResetProgram}>Reset</button>
-            <button onClick={submitProgram}>Submit Instructions</button>
+            <button onClick={onResetProgram}>Đặt lại</button>
+            <button onClick={submitProgram}>Chạy chương trình</button>
           </div>
           }
         </div>

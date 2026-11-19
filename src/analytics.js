@@ -2,9 +2,9 @@ import ReactGA from 'react-ga4';
 
 import { PLANETS } from './game/missions.js';
 
-ReactGA.initialize('G-SBZELV63L8');
+// Tắt thống kê của bản gốc để không gửi dữ liệu về tác giả
 
-const logAnalytics = process.env.NODE_ENV != 'development';
+const logAnalytics = false;
 
 export const getMissionLabel = (planetIndex, missionIndex) => {
   return `${PLANETS[planetIndex].name}, Mission ${missionIndex + 1}`;

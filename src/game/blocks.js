@@ -27,69 +27,69 @@ export const BLOCK_NAMES = {
 export const BLOCKS = {
 
   [BLOCK_NAMES.BRIDGE]: {
-    name: 'Build Bridge'
+    name: 'Bắc cầu'
   },
   [BLOCK_NAMES.FORWARD]: {
-    name: 'Move Forward'
+    name: 'Tiến lên một bước'
   },
 
   // TEMP: These two blocks are hard-coded to use the variable `x`.
   // The program technically supports multiple variables, but not currently in use.
   // If they're ever put into use, replace these `x`s in the `name` with the more generic "Variable"
   [BLOCK_NAMES.FORWARD_VAR]: {
-    name: 'Move x Steps',
+    name: 'Đi x bước',
     args: [
-      {'key': 'var', 'text': 'Variable name?'}
+      {'key': 'var', 'text': 'Tên biến là gì?'}
     ]
   },
   [BLOCK_NAMES.INCREMENT_VAR]: {
-    name: 'Increase x by 1',
+    name: 'Tăng x thêm 1',
     args: [
-      {'key': 'var', 'text': 'Variable name?'}
+      {'key': 'var', 'text': 'Tên biến là gì?'}
     ]
   },
 
   [BLOCK_NAMES.TURN]: {
-    name: 'Turn Around'
+    name: 'Quay đầu'
   },
   [BLOCK_NAMES.PICK_UP]: {
-    name: 'Pick Up Object'
+    name: 'Nhặt vật'
   },
   [BLOCK_NAMES.DROP]: {
-    name: 'Drop Object'
+    name: 'Thả vật'
   },
   [BLOCK_NAMES.LAUNCH_ROCKET]: {
-    name: 'Launch Rocket'
+    name: 'Phóng tên lửa'
   },
   [BLOCK_NAMES.TAKE_PHOTO]: {
-    name: 'Take Photo'
+    name: 'Chụp ảnh'
   },
   [BLOCK_NAMES.PRESS_BUTTON]: {
-    name: 'Press Button'
+    name: 'Bấm nút'
   },
   [BLOCK_NAMES.REPEAT]: {
-    name: 'Repeat',
+    name: 'Lặp lại',
     args: [
-      {'key': 'count', 'text': 'How many times to repeat?'}
+      {'key': 'count', 'text': 'Lặp lại bao nhiêu lần?'}
     ]
   },
   [BLOCK_NAMES.END_REPEAT]: {
-    name: 'End Repeat'
+    name: 'Kết thúc lặp'
   },
   [BLOCK_NAMES.IF_BUTTON_BLUE]: {
-    name: 'If Button is Blue'
+    name: 'Nếu nút màu xanh'
   },
   [BLOCK_NAMES.IF_CARRYING_BLUE]: {
-    name: 'If Carrying Blue'
+    name: 'Nếu đang mang vật xanh'
   },
   [BLOCK_NAMES.IF_ICE]: {
-    name: 'If Ice Detected'
+    name: 'Nếu phát hiện băng'
   },
   [BLOCK_NAMES.ELSE]: {
-    name: 'Else'
+    name: 'Nếu không'
   },
   [BLOCK_NAMES.END_IF]: {
-    name: 'End If'
+    name: 'Kết thúc nếu'
   },
 }
 
@@ -119,10 +119,10 @@ export const instruction_label = ({ block, args }) => {
       return `${name} ${args.count}`;
 
     case BLOCK_NAMES.FORWARD_VAR:
-      return `Move ${args.var} Steps`;
+      return `Đi ${args.var} bước`;
 
     case BLOCK_NAMES.INCREMENT_VAR:
-      return `Increase ${args.var} by 1`;
+      return `Tăng ${args.var} thêm 1`;
 
     default:
       return name;
@@ -150,7 +150,7 @@ export const validate_program = (program, variables) => {
         }
       }
       if (!found) {
-        return {isValid: false, error: `Tenacity does not have a variable called ${instruction.args.var}`};
+        return {isValid: false, error: `Tenacity không có biến nào tên là ${instruction.args.var}`};
       }
     }
 
@@ -161,7 +161,7 @@ export const validate_program = (program, variables) => {
         stack.push({type: BLOCK_NAMES.REPEAT, line: i});
         const count = parseInt(instruction.args.count);
         if (isNaN(count)) {
-          return {isValid: false, error: 'Tenacity only understands an integer number of times to repeat!'};
+          return {isValid: false, error: 'Số lần lặp phải là một số nguyên!'};
         }
         instruction.args.count = count;
         break;
@@ -169,10 +169,10 @@ export const validate_program = (program, variables) => {
       case BLOCK_NAMES.END_REPEAT:
         top = stack.pop();
         if (top === undefined) {
-          return {isValid: false, error: 'Tenacity can only End Repeat after a matching Repeat instruction.'};
+          return {isValid: false, error: 'Chỉ có thể dùng Kết thúc lặp sau một khối Lặp lại tương ứng.'};
         }
         else if (top.type !== BLOCK_NAMES.REPEAT) {
-          return {isValid: false, error: 'Tenacity tried to End Repeat, but it looks like some other part of the program needs to be resolved first.'};
+          return {isValid: false, error: 'Tenacity muốn Kết thúc lặp, nhưng có một phần khác của chương trình cần được đóng lại trước.'};
         }
         instruction.meta.jumpBackTo = top.line;
         augmentedProgram[top.line].meta.jumpTo = i + 1;
@@ -187,13 +187,13 @@ export const validate_program = (program, variables) => {
       case BLOCK_NAMES.ELSE:
         top = stack.pop();
         if (top === undefined) {
-          return {isValid: false, error: 'Tenacity can only have an Else after a matching If instruction.'};
+          return {isValid: false, error: 'Chỉ có thể dùng Nếu không sau một khối Nếu tương ứng.'};
         }
         else if (top.condition !== true) {
-          return {isValid: false, error: 'Tenacity tried to Else, but it looks like some other part of the program needs to be resolved first.'};
+          return {isValid: false, error: 'Tenacity muốn dùng Nếu không, nhưng có một phần khác của chương trình cần được đóng lại trước.'};
         }
         else if (augmentedProgram[top.line].meta.elseJump !== undefined) {
-          return {isValid: false, error: 'An If instruction can only have one Else expression.'};
+          return {isValid: false, error: 'Mỗi khối Nếu chỉ có thể có một khối Nếu không.'};
         }
         augmentedProgram[top.line].meta.elseIndex = i;
         augmentedProgram[top.line].meta.elseJump = i + 1;
@@ -203,10 +203,10 @@ export const validate_program = (program, variables) => {
       case BLOCK_NAMES.END_IF:
         top = stack.pop();
         if (top === undefined) {
-          return {isValid: false, error: 'Tenacity can only End If after a matching If instruction.'};
+          return {isValid: false, error: 'Chỉ có thể dùng Kết thúc nếu sau một khối Nếu tương ứng.'};
         }
         else if (top.condition !== true) {
-          return {isValid: false, error: 'Tenacity tried to End If, but it looks like some other part of the program needs to be resolved first.'};
+          return {isValid: false, error: 'Tenacity muốn Kết thúc nếu, nhưng có một phần khác của chương trình cần được đóng lại trước.'};
         }
         augmentedProgram[top.line].meta.jumpTo = i + 1;
         const elseIndex = augmentedProgram[top.line].meta.elseIndex;
@@ -226,14 +226,14 @@ export const validate_program = (program, variables) => {
   const top = stack.pop();
   if (top !== undefined) {
     if (top.type === BLOCK_NAMES.REPEAT) {
-      return {isValid: false, error: 'Tenacity found a Repeat instruction, but it needs a matching End Repeat instruction so that it knows when to stop repeating.'};
+      return {isValid: false, error: 'Có khối Lặp lại nhưng thiếu khối Kết thúc lặp để biết khi nào dừng lặp.'};
     }
     else if (top.condition === true) {
-      return {isValid: false, error: 'Tenacity found an If instruction, but it needs a matching End If instruction so that it knows when the condition ends.'};
+      return {isValid: false, error: 'Có khối Nếu nhưng thiếu khối Kết thúc nếu để biết khi nào điều kiện kết thúc.'};
     }
     else {
       // TODO: Shouldn't ever come up, but make this error more descriptive just in case.
-      return {isValid: false, error: 'Tenacity found a mistake in the program.'};
+      return {isValid: false, error: 'Chương trình có lỗi.'};
     }
   }
 

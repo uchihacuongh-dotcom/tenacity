@@ -13,7 +13,7 @@ const d = defaults;
 
 export const PLANETS = [
   {
-    name: 'Mercury',
+    name: 'Sao Thủy',
     introConfig: {
       size: 15,
       scale: 2,
@@ -25,11 +25,11 @@ export const PLANETS = [
       sky: '#7d705b',
       text: 'black'
     },
-    briefing: 'The Tenacity rover has arrived on Mercury. Use the control panel to help Tenacity complete its missions.',
+    briefing: 'Xe tự hành Tenacity đã đến Sao Thủy. Hãy dùng bảng điều khiển để giúp Tenacity hoàn thành nhiệm vụ.',
     missions: [
       {
-        objective: 'Navigate Tenacity back to the spacecraft for refueling.',
-        hint: 'Click on a function to add it to Tenacity\'s program. Click "Submit Instructions" when the program is ready to run.',
+        objective: 'Đưa Tenacity quay về tàu vũ trụ để tiếp nhiên liệu.',
+        hint: 'Bấm vào một khối lệnh để thêm vào chương trình của Tenacity. Khi xong, bấm "Chạy chương trình".',
         blocks: [
           [BLOCK_NAMES.FORWARD, 2]
         ],
@@ -38,11 +38,11 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 300},
         ],
         criteria: [
-          {category: 'rover_x', value: 500, message: 'Tenacity did not make it back to spacecraft.'}
+          {category: 'rover_x', value: 500, message: 'Tenacity chưa về tới tàu vũ trụ.'}
         ]
       },
       {
-        objective: 'Get close to the crater to explore it. But be careful not to fall in!',
+        objective: 'Đến gần hố thiên thạch để khám phá. Nhưng cẩn thận đừng rơi xuống!',
         blocks: [
           [BLOCK_NAMES.FORWARD, 5]
         ],
@@ -52,11 +52,11 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 100},
         ],
         criteria: [
-          {category: 'rover_x', value: 400, message: 'Tenacity did not make it close enough to crater.'}
+          {category: 'rover_x', value: 400, message: 'Tenacity chưa đến đủ gần hố thiên thạch.'}
         ]
       },
       {
-        objective: 'Return the rock sample back to the rocket.',
+        objective: 'Mang mẫu đá về lại tên lửa.',
         blocks: [
           [BLOCK_NAMES.FORWARD, 5],
           [BLOCK_NAMES.PICK_UP, 1],
@@ -69,12 +69,12 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 400},
         ],
         criteria: [
-          {category: 'rover_x', value: 100, message: 'Tenacity did not make it back to rocket.'},
-          {category: 'rover_carry', value: 'rock', message: 'Tenacity does not have rock sample.'},
+          {category: 'rover_x', value: 100, message: 'Tenacity chưa về tới tên lửa.'},
+          {category: 'rover_carry', value: 'rock', message: 'Tenacity chưa mang mẫu đá.'},
         ]
       },
       {
-        objective: "We're done here on Mercury! Launch the rocket to head to the next planet.",
+        objective: 'Xong việc ở Sao Thủy! Hãy phóng tên lửa để đến hành tinh tiếp theo.',
         blocks: [
           [BLOCK_NAMES.LAUNCH_ROCKET, 1]
         ],
@@ -83,13 +83,13 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 400},
         ],
         criteria: [
-          {category: 'event', value: EVENTS.ROCKET_LAUNCH, message: 'Rocket did not launch.'}
+          {category: 'event', value: EVENTS.ROCKET_LAUNCH, message: 'Tên lửa chưa được phóng.'}
         ]
       }
     ]
   },
   {
-    name: 'Venus',
+    name: 'Sao Kim',
     introConfig: {
       size: 20,
       scale: 1.7,
@@ -101,11 +101,11 @@ export const PLANETS = [
       sky: '#dbb78f',
       text: 'black'
     },
-    briefing: 'Welcome to Venus! Tenacity\'s mission is to explore the volcanos on the planet.',
+    briefing: 'Chào mừng đến Sao Kim! Nhiệm vụ của Tenacity là khám phá các ngọn núi lửa trên hành tinh này.',
     missions: [
       {
-        objective: 'Get to the base of the volcano and take a photo.',
-        hint: 'To repeat a section of a program multiple times, put it in between a "Repeat" and "End Repeat" instruction.',
+        objective: 'Đến chân núi lửa và chụp một bức ảnh.',
+        hint: 'Để lặp lại một đoạn chương trình nhiều lần, hãy đặt nó giữa khối "Lặp lại" và "Kết thúc lặp".',
         blocks: [
           [BLOCK_NAMES.FORWARD, 1],
           [BLOCK_NAMES.TAKE_PHOTO, 1],
@@ -118,11 +118,11 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 200},
         ],
         criteria: [
-          {category: 'photograph', value: 700, message: 'Tenacity did not take photograph of volcano.'},
+          {category: 'photograph', value: 700, message: 'Tenacity chưa chụp ảnh núi lửa.'},
         ]
       },
       {
-        objective: 'Collect the rock sample.',
+        objective: 'Thu thập mẫu đá.',
         blocks: [
           [BLOCK_NAMES.FORWARD, 2],
           [BLOCK_NAMES.BRIDGE, 1],
@@ -136,11 +136,11 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 100},
         ],
         criteria: [
-          {category: 'rover_carry', value: 'rock', message: 'Tenacity does not have rock sample.'},
+          {category: 'rover_carry', value: 'rock', message: 'Tenacity chưa mang mẫu đá.'},
         ]
       },
       {
-        objective: 'Take photos at each of the five volcanos.',
+        objective: 'Chụp ảnh cả năm ngọn núi lửa.',
         blocks: [
           [BLOCK_NAMES.FORWARD, 3],
           [BLOCK_NAMES.TURN, 2],
@@ -157,16 +157,16 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 400},
         ],
         criteria: [
-          {category: 'photograph', value: 200, message: 'Tenacity did not take photograph of all volcano.'},
-          {category: 'photograph', value: 300, message: 'Tenacity did not take photograph of all volcano.'},
-          {category: 'photograph', value: 400, message: 'Tenacity did not take photograph of all volcano.'},
-          {category: 'photograph', value: 500, message: 'Tenacity did not take photograph of all volcano.'},
-          {category: 'photograph', value: 600, message: 'Tenacity did not take photograph of all volcano.'},
+          {category: 'photograph', value: 200, message: 'Tenacity chưa chụp ảnh đủ các núi lửa.'},
+          {category: 'photograph', value: 300, message: 'Tenacity chưa chụp ảnh đủ các núi lửa.'},
+          {category: 'photograph', value: 400, message: 'Tenacity chưa chụp ảnh đủ các núi lửa.'},
+          {category: 'photograph', value: 500, message: 'Tenacity chưa chụp ảnh đủ các núi lửa.'},
+          {category: 'photograph', value: 600, message: 'Tenacity chưa chụp ảnh đủ các núi lửa.'},
         ]
       },
       {
-        objective: 'Drop off both rock samples at the rocket.',
-        hint: 'Tenacity can only hold one object at a time.',
+        objective: 'Mang cả hai mẫu đá về thả ở chỗ tên lửa.',
+        hint: 'Tenacity mỗi lần chỉ mang được một vật.',
         blocks: [
           [BLOCK_NAMES.FORWARD, 5],
           [BLOCK_NAMES.TURN, 1],
@@ -185,12 +185,12 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 400},
         ],
         criteria: [
-          {category: 'location_x', id: 'rock1', value: 400, message: 'Both rock samples were not dropped off at rocket.'},
-          {category: 'location_x', id: 'rock2', value: 400, message: 'Both rock samples were not dropped off at rocket.'},
+          {category: 'location_x', id: 'rock1', value: 400, message: 'Chưa thả đủ hai mẫu đá ở chỗ tên lửa.'},
+          {category: 'location_x', id: 'rock2', value: 400, message: 'Chưa thả đủ hai mẫu đá ở chỗ tên lửa.'},
         ]
       },
       {
-        objective: "We're done here on Venus! Launch the rocket to head to the next planet.",
+        objective: 'Xong việc ở Sao Kim! Hãy phóng tên lửa để đến hành tinh tiếp theo.',
         blocks: [
           [BLOCK_NAMES.LAUNCH_ROCKET, 1]
         ],
@@ -201,13 +201,13 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 400},
         ],
         criteria: [
-          {category: 'event', value: EVENTS.ROCKET_LAUNCH, message: 'Rocket did not launch.'}
+          {category: 'event', value: EVENTS.ROCKET_LAUNCH, message: 'Tên lửa chưa được phóng.'}
         ]
       }
     ]
   },
   {
-    name: 'Earth',
+    name: 'Trái Đất',
     introConfig: {
       size: 21,
       scale: 1.3,
@@ -219,11 +219,11 @@ export const PLANETS = [
       sky: '#9df2ee',
       text: 'black'
     },
-    briefing: 'The Tenacity rover has arrived on Earth. Deliver the rock samples to the lab before proceeding to the next planet.',
+    briefing: 'Xe tự hành Tenacity đã đến Trái Đất. Hãy giao các mẫu đá cho phòng thí nghiệm trước khi đến hành tinh tiếp theo.',
     missions: [
       {
-        objective: 'Unlock the lab. To unlock the lab, press all of the blue buttons without pressing the red button.',
-        hint: 'Any instructions between an "If" and an "End If" instruction will only run if the "If" condition is true.',
+        objective: 'Mở khóa phòng thí nghiệm: bấm tất cả các nút xanh mà không bấm nút đỏ.',
+        hint: 'Các lệnh nằm giữa "Nếu" và "Kết thúc nếu" chỉ chạy khi điều kiện của "Nếu" đúng.',
         blocks: [
           [BLOCK_NAMES.FORWARD, 1],
           [BLOCK_NAMES.PRESS_BUTTON, 1],
@@ -241,14 +241,14 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 300},
         ],
         criteria: [
-          {category: 'button_press', id: 'button1', value: true, message: 'Tenacity did not press all blue buttons.'},
-          {category: 'button_press', id: 'button2', value: false, message: 'Tenacity pressed a red button.'},
-          {category: 'button_press', id: 'button3', value: true, message: 'Tenacity did not press all blue buttons.'},
+          {category: 'button_press', id: 'button1', value: true, message: 'Tenacity chưa bấm hết các nút xanh.'},
+          {category: 'button_press', id: 'button2', value: false, message: 'Tenacity đã bấm nhầm nút đỏ.'},
+          {category: 'button_press', id: 'button3', value: true, message: 'Tenacity chưa bấm hết các nút xanh.'},
         ]
       },
       {
-        objective: 'There is one rock sample in the "Samples" box. Move it to the appropriately labeled color box.',
-        hint: 'Red rocks should go to the "Red" box and blue rocks should go to the "Blue" box.',
+        objective: 'Có một mẫu đá trong hộp "Samples". Hãy chuyển nó vào hộp đúng màu.',
+        hint: 'Đá đỏ bỏ vào hộp "Red", đá xanh bỏ vào hộp "Blue".',
         blocks: [
           [BLOCK_NAMES.FORWARD, 5],
           [BLOCK_NAMES.PICK_UP, 1],
@@ -264,11 +264,11 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 200},
         ],
         criteria: [
-          {category: 'location_x', id: 'rock', value: 500, message: 'Rock sample did not end up in blue box.'},
+          {category: 'location_x', id: 'rock', value: 500, message: 'Mẫu đá chưa nằm trong hộp xanh.'},
         ]
       },
       {
-        objective: 'There is one rock sample in the "Samples" box. Move it to the appropriately labeled color box.',
+        objective: 'Có một mẫu đá trong hộp "Samples". Hãy chuyển nó vào hộp đúng màu.',
         blocks: [
           [BLOCK_NAMES.FORWARD, 5],
           [BLOCK_NAMES.PICK_UP, 1],
@@ -285,11 +285,11 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 200},
         ],
         criteria: [
-          {category: 'location_x', id: 'rock', value: 500, message: 'Rock sample did not end up in red box.'},
+          {category: 'location_x', id: 'rock', value: 500, message: 'Mẫu đá chưa nằm trong hộp đỏ.'},
         ]
       },
       {
-        objective: 'There are three rock samples in the "Samples" box. Move each of them to the appropriately labeled color box.',
+        objective: 'Có ba mẫu đá trong hộp "Samples". Hãy chuyển từng mẫu vào hộp đúng màu.',
         blocks: [
           [BLOCK_NAMES.FORWARD, 7],
           [BLOCK_NAMES.TURN, 4],
@@ -311,13 +311,13 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 200},
         ],
         criteria: [
-          {category: 'location_x', id: 'rock1', value: 400, message: 'Red rock sample did not end up in red box.'},
-          {category: 'location_x', id: 'rock2', value: 500, message: 'Blue rock sample did not end up in blue box.'},
-          {category: 'location_x', id: 'rock3', value: 400, message: 'Red rock sample did not end up in red box.'},
+          {category: 'location_x', id: 'rock1', value: 400, message: 'Đá đỏ chưa nằm trong hộp đỏ.'},
+          {category: 'location_x', id: 'rock2', value: 500, message: 'Đá xanh chưa nằm trong hộp xanh.'},
+          {category: 'location_x', id: 'rock3', value: 400, message: 'Đá đỏ chưa nằm trong hộp đỏ.'},
         ]
       }, 
       {
-        objective: "We're done here on Earth! Launch the rocket to head to the next planet.",
+        objective: 'Xong việc ở Trái Đất! Hãy phóng tên lửa để đến hành tinh tiếp theo.',
         blocks: [
           [BLOCK_NAMES.LAUNCH_ROCKET, 1]
         ],
@@ -326,13 +326,13 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 400},
         ],
         criteria: [
-          {category: 'event', value: EVENTS.ROCKET_LAUNCH, message: 'Rocket did not launch.'}
+          {category: 'event', value: EVENTS.ROCKET_LAUNCH, message: 'Tên lửa chưa được phóng.'}
         ]
       }
     ]
   },
   {
-    name: 'Mars',
+    name: 'Sao Hỏa',
     introConfig: {
       size: 11,
       scale: 1,
@@ -344,11 +344,11 @@ export const PLANETS = [
       sky: '#e67870',
       text: 'black'
     },
-    briefing: 'The Tenacity rover has arrived on Mars, the last planet on this journey.',
+    briefing: 'Xe tự hành Tenacity đã đến Sao Hỏa, hành tinh cuối cùng của hành trình.',
     missions: [
       {
-        objective: 'Take a photograph at the base of the mountain.',
-        hint: 'Tenacity store data in variables, found in the upper right. Some instructions let you type the name of a variable to control how the instruction behaves.',
+        objective: 'Chụp một bức ảnh ở chân ngọn núi.',
+        hint: 'Tenacity lưu dữ liệu trong các biến, hiển thị ở góc trên bên phải. Một số khối lệnh cho phép nhập tên biến để điều khiển cách khối đó hoạt động.',
         variables: [
           {name: 'x', value: 0},
         ],
@@ -363,11 +363,11 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 200},
         ],
         criteria: [
-          {category: 'photograph', value: 500, message: 'Tenacity did not take photograph of mountain.'},
+          {category: 'photograph', value: 500, message: 'Tenacity chưa chụp ảnh ngọn núi.'},
         ]
       },
       {
-        objective: 'Test each mountain for the presence of ice. Set the variable x to the number of mountains where ice was found.',
+        objective: 'Kiểm tra từng ngọn núi xem có băng không. Đặt biến x bằng số ngọn núi có băng.',
         variables: [
           {name: 'x', value: 0},
         ],
@@ -388,11 +388,11 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 100},
         ],
         criteria: [
-          {category: 'variable', id: 'x', value: 2, message: 'Tenacity did not calculate x correctly.'},
+          {category: 'variable', id: 'x', value: 2, message: 'Tenacity tính x chưa đúng.'},
         ]
       },
       {
-        objective: 'Take a photograph at the base of each mountain. Don\'t take more photographs than you need.',
+        objective: 'Chụp ảnh ở chân từng ngọn núi. Đừng chụp nhiều hơn mức cần thiết.',
         variables: [
           {name: 'x', value: 0},
         ],
@@ -411,14 +411,14 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 100},
         ],
         criteria: [
-          {category: 'photograph', value: 200, message: 'Tenacity did not take a photograph of each mountain.'},
-          {category: 'photograph', value: 400, message: 'Tenacity did not take a photograph of each mountain.'},
-          {category: 'photograph', value: 700, message: 'Tenacity did not take a photograph of each mountain.'},
-          {category: 'max_photographs', value: 3, message: 'Tenacity took too many photographs.'},
+          {category: 'photograph', value: 200, message: 'Tenacity chưa chụp ảnh từng ngọn núi.'},
+          {category: 'photograph', value: 400, message: 'Tenacity chưa chụp ảnh từng ngọn núi.'},
+          {category: 'photograph', value: 700, message: 'Tenacity chưa chụp ảnh từng ngọn núi.'},
+          {category: 'max_photographs', value: 3, message: 'Tenacity chụp quá nhiều ảnh.'},
         ]
       },
       {
-        objective: 'Bring all of the red rock samples back to the rocket. Do not move the blue rocks.',
+        objective: 'Mang tất cả đá đỏ về chỗ tên lửa. Không được di chuyển đá xanh.',
         variables: [
           {name: 'x', value: 0},
         ],
@@ -442,16 +442,16 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 100},
         ],
         criteria: [
-          {category: 'location_x', id: 'rock1', value: 100, message: 'Rock samples were not dropped off at rocket.'},
-          {category: 'location_x', id: 'rock2', value: 100, message: 'Rock samples were not dropped off at rocket.'},
-          {category: 'location_x', id: 'rock3', value: 100, message: 'Rock samples were not dropped off at rocket.'},
-          {category: 'location_x', id: 'rock4', value: 300, message: 'A blue rock was moved.'},
-          {category: 'location_x', id: 'rock5', value: 500, message: 'A blue rock was moved.'},
-          {category: 'location_x', id: 'rock6', value: 700, message: 'A blue rock was moved.'},
+          {category: 'location_x', id: 'rock1', value: 100, message: 'Các mẫu đá chưa được thả ở chỗ tên lửa.'},
+          {category: 'location_x', id: 'rock2', value: 100, message: 'Các mẫu đá chưa được thả ở chỗ tên lửa.'},
+          {category: 'location_x', id: 'rock3', value: 100, message: 'Các mẫu đá chưa được thả ở chỗ tên lửa.'},
+          {category: 'location_x', id: 'rock4', value: 300, message: 'Một viên đá xanh đã bị di chuyển.'},
+          {category: 'location_x', id: 'rock5', value: 500, message: 'Một viên đá xanh đã bị di chuyển.'},
+          {category: 'location_x', id: 'rock6', value: 700, message: 'Một viên đá xanh đã bị di chuyển.'},
         ]
       },
       {
-        objective: "We're done here on Mars! Launch the rocket to head home.",
+        objective: 'Xong việc ở Sao Hỏa! Hãy phóng tên lửa để về nhà.',
         blocks: [
           [BLOCK_NAMES.LAUNCH_ROCKET, 1]
         ],
@@ -460,7 +460,7 @@ export const PLANETS = [
           {...d, id: 'rover', object: OBJECTS.ROVER, x: 400},
         ],
         criteria: [
-          {category: 'event', value: EVENTS.ROCKET_LAUNCH, message: 'Rocket did not launch.'}
+          {category: 'event', value: EVENTS.ROCKET_LAUNCH, message: 'Tên lửa chưa được phóng.'}
         ]
       } 
     ]
