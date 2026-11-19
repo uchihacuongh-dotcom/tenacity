@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "./static/css/main.77f03b25.chunk.css",
+    "main.js": "./static/js/main.3f3c264b.chunk.js",
+    "main.js.map": "./static/js/main.3f3c264b.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.c5750977.js",
+    "runtime-main.js.map": "./static/js/runtime-main.c5750977.js.map",
+    "static/js/2.a4716c2c.chunk.js": "./static/js/2.a4716c2c.chunk.js",
+    "static/js/2.a4716c2c.chunk.js.map": "./static/js/2.a4716c2c.chunk.js.map",
+    "static/js/3.b9cdee87.chunk.js": "./static/js/3.b9cdee87.chunk.js",
+    "static/js/3.b9cdee87.chunk.js.map": "./static/js/3.b9cdee87.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.77f03b25.chunk.css.map": "./static/css/main.77f03b25.chunk.css.map",
+    "static/js/2.a4716c2c.chunk.js.LICENSE.txt": "./static/js/2.a4716c2c.chunk.js.LICENSE.txt",
+    "static/media/amerika.421d9361.mp3": "./static/media/amerika.421d9361.mp3",
+    "static/media/box_blue.ae51fad5.svg": "./static/media/box_blue.ae51fad5.svg",
+    "static/media/box_red.39481fce.svg": "./static/media/box_red.39481fce.svg",
+    "static/media/box_samples.42998170.svg": "./static/media/box_samples.42998170.svg",
+    "static/media/bridge.34071983.svg": "./static/media/bridge.34071983.svg",
+    "static/media/button_blue_pressed.cb4e9b88.svg": "./static/media/button_blue_pressed.cb4e9b88.svg",
+    "static/media/button_blue_unpressed.ee62bc5f.svg": "./static/media/button_blue_unpressed.ee62bc5f.svg",
+    "static/media/button_red_pressed.9b4fb095.svg": "./static/media/button_red_pressed.9b4fb095.svg",
+    "static/media/button_red_unpressed.31c527be.svg": "./static/media/button_red_unpressed.31c527be.svg",
+    "static/media/lab.6f673a73.svg": "./static/media/lab.6f673a73.svg",
+    "static/media/mercury_crater.8915524e.svg": "./static/media/mercury_crater.8915524e.svg",
+    "static/media/mountain.e47ec16e.svg": "./static/media/mountain.e47ec16e.svg",
+    "static/media/photograph.e146b975.svg": "./static/media/photograph.e146b975.svg",
+    "static/media/rock_blue.5394fa66.svg": "./static/media/rock_blue.5394fa66.svg",
+    "static/media/rock_red.1a367325.svg": "./static/media/rock_red.1a367325.svg",
+    "static/media/rocket.640ef039.svg": "./static/media/rocket.640ef039.svg",
+    "static/media/rover.3f01411d.svg": "./static/media/rover.3f01411d.svg",
+    "static/media/rover_flipped.67bb4e23.svg": "./static/media/rover_flipped.67bb4e23.svg",
+    "static/media/volcano.435850bf.svg": "./static/media/volcano.435850bf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c5750977.js",
+    "static/js/2.a4716c2c.chunk.js",
+    "static/css/main.77f03b25.chunk.css",
+    "static/js/main.3f3c264b.chunk.js"
+  ]
+}
